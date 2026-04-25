@@ -14,7 +14,135 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      accident_zones: {
+        Row: {
+          created_at: string
+          id: string
+          lat: number
+          lng: number
+          name: string
+          radius_m: number
+          reason: string | null
+          risk_level: number
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          lat: number
+          lng: number
+          name: string
+          radius_m?: number
+          reason?: string | null
+          risk_level?: number
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          lat?: number
+          lng?: number
+          name?: string
+          radius_m?: number
+          reason?: string | null
+          risk_level?: number
+        }
+        Relationships: []
+      }
+      incidents: {
+        Row: {
+          created_at: string
+          id: string
+          kind: Database["public"]["Enums"]["incident_type"]
+          lat: number
+          lng: number
+          message: string | null
+          severity: number
+          speed_kmh: number | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          kind: Database["public"]["Enums"]["incident_type"]
+          lat: number
+          lng: number
+          message?: string | null
+          severity?: number
+          speed_kmh?: number | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          kind?: Database["public"]["Enums"]["incident_type"]
+          lat?: number
+          lng?: number
+          message?: string | null
+          severity?: number
+          speed_kmh?: number | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          emergency_contact: string | null
+          id: string
+          updated_at: string
+          vehicle_label: string | null
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          emergency_contact?: string | null
+          id: string
+          updated_at?: string
+          vehicle_label?: string | null
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          emergency_contact?: string | null
+          id?: string
+          updated_at?: string
+          vehicle_label?: string | null
+        }
+        Relationships: []
+      }
+      vehicle_positions: {
+        Row: {
+          accuracy: number | null
+          heading: number
+          label: string | null
+          lat: number
+          lng: number
+          speed_kmh: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          accuracy?: number | null
+          heading?: number
+          label?: string | null
+          lat: number
+          lng: number
+          speed_kmh?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          accuracy?: number | null
+          heading?: number
+          label?: string | null
+          lat?: number
+          lng?: number
+          speed_kmh?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +151,12 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      incident_type:
+        | "sudden_brake"
+        | "collision_risk"
+        | "crash"
+        | "overspeed"
+        | "sos"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +283,14 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      incident_type: [
+        "sudden_brake",
+        "collision_risk",
+        "crash",
+        "overspeed",
+        "sos",
+      ],
+    },
   },
 } as const
