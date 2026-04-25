@@ -2,110 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Minimal Architecture Design System - Black & White Excellence */
+/* SafeDrive V2V — Safety Dark design system */
 
 @layer base {
   :root {
-    /* Pure Architecture Palette */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
-    
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
-    
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
-    
-    /* Primary: Pure Black */
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
-    
-    /* Secondary: Pure White */
-    --secondary: 0 0% 100%;
-    --secondary-foreground: 0 0% 0%;
-    
-    /* Muted: Subtle Gray */
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 20%;
-    
-    /* Accent: Elegant Gray */
-    --accent: 0 0% 95%;
-    --accent-foreground: 0 0% 0%;
-    
-    --destructive: 0 84.2% 60.2%;
+    --background: 0 0% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Amber = caution (primary brand) */
+    --primary: 38 95% 55%;
+    --primary-foreground: 0 0% 6%;
+
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 16%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Red = danger */
+    --destructive: 0 84% 58%;
     --destructive-foreground: 0 0% 100%;
-    
-    --border: 0 0% 90%;
-    --input: 0 0% 95%;
-    --ring: 0 0% 0%;
 
-    --radius: 0.5rem;
+    /* Green = safe */
+    --safe: 142 71% 45%;
+    --safe-foreground: 0 0% 6%;
 
-    --sidebar-background: 0 0% 98%;
+    /* Cyan = info */
+    --info: 196 90% 55%;
+    --info-foreground: 0 0% 6%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --border: 0 0% 18%;
+    --input: 0 0% 14%;
+    --ring: 38 95% 55%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    --radius: 0.75rem;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 38 95% 55%;
+    --sidebar-primary-foreground: 0 0% 6%;
+    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 38 95% 55%;
 
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-    
-    /* Architecture Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 0% / 0.8), hsl(0 0% 0% / 0.4));
-    --gradient-overlay: linear-gradient(180deg, hsl(0 0% 0% / 0.9), hsl(0 0% 0% / 0.1));
-    
-    /* Elegant Shadows */
-    --shadow-architectural: 0 25px 50px -12px hsl(0 0% 0% / 0.25);
-    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.15);
-    
-    /* Smooth Transitions */
-    --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    --transition-fast: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    --gradient-danger: linear-gradient(135deg, hsl(0 84% 58%), hsl(14 90% 55%));
+    --gradient-amber: linear-gradient(135deg, hsl(38 95% 55%), hsl(28 95% 50%));
+    --gradient-safe: linear-gradient(135deg, hsl(142 71% 45%), hsl(160 71% 42%));
+    --shadow-glow-amber: 0 0 30px hsl(38 95% 55% / 0.35);
+    --shadow-glow-danger: 0 0 40px hsl(0 84% 58% / 0.5);
+    --shadow-elevated: 0 20px 50px -20px hsl(0 0% 0% / 0.8);
   }
 
   .dark {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-    
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 100%;
-    
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 100%;
-    
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
-    
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 100%;
-    
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 60%;
-    
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 100%;
-    
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-    
-    --border: 0 0% 15%;
-    --input: 0 0% 10%;
-    --ring: 0 0% 100%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Project is dark by default; keep dark class equivalent */
+    --background: 0 0% 6%;
+    --foreground: 0 0% 98%;
   }
 }
 
@@ -113,39 +74,40 @@
   * {
     @apply border-border;
   }
-
+  html, body, #root {
+    @apply h-full;
+  }
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
-  
-  /* Architectural Typography */
-  .text-architectural {
-    @apply tracking-[-0.02em] leading-[1.1];
+  .text-mono { font-variant-numeric: tabular-nums; }
+}
+
+@layer components {
+  .pulse-ring {
+    @apply relative inline-flex;
   }
-  
-  .text-minimal {
-    @apply tracking-wide uppercase text-xs font-medium;
+  .pulse-ring::after {
+    content: "";
+    @apply absolute inset-0 rounded-full;
+    box-shadow: 0 0 0 0 hsl(var(--destructive) / 0.6);
+    animation: pulse-ring 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
-  
-  /* Hero Image Overlay */
-  .hero-overlay {
-    background: var(--gradient-overlay);
+  @keyframes pulse-ring {
+    70% { box-shadow: 0 0 0 16px hsl(var(--destructive) / 0); }
+    100% { box-shadow: 0 0 0 0 hsl(var(--destructive) / 0); }
   }
-  
-  /* Smooth Reveal Animation */
-  .reveal {
-    @apply opacity-0 translate-y-8;
-    animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-  
-  .reveal-delayed {
-    @apply opacity-0 translate-y-8;
-    animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
-  }
-  
-  @keyframes reveal {
-    to {
-      @apply opacity-100 translate-y-0;
-    }
-  }
+}
+
+/* Leaflet dark tweaks */
+.leaflet-container { background: hsl(var(--background)) !important; }
+.leaflet-control-attribution {
+  background: hsl(var(--card) / 0.8) !important;
+  color: hsl(var(--muted-foreground)) !important;
+}
+.leaflet-control-attribution a { color: hsl(var(--primary)) !important; }
+.leaflet-bar a {
+  background: hsl(var(--card)) !important;
+  color: hsl(var(--foreground)) !important;
+  border-color: hsl(var(--border)) !important;
 }
